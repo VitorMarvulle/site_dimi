@@ -28,22 +28,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Dark Mode btn
 
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const darkModeBtn = document.getElementById('darkModeBtn');
+//     const root = document.documentElement;
+//     const svgElement = document.getElementById('dynamic-svg');
+
+//     // Verifica o tema armazenado no localStorage
+//     const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+//     if (isDarkMode) {
+//         root.classList.add('dark-mode');
+//     }
+
+//     const updateSvgColor = () => {
+//         const rootStyles = getComputedStyle(root);
+//         const svgColor = rootStyles.getPropertyValue('--svg-color').trim();
+
+//         const newSrc = `https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&size=50&duration=2000&pause=100&color=${svgColor}&background=FFFFFF00&width=480&height=100&lines=BIM.;Arquitetura.;Design.`;
+
+//         // Atualiza o atributo src apenas se houver mudanças para evitar redirecionamentos desnecessários
+//         if (svgElement.getAttribute('src') !== newSrc) {
+//             svgElement.setAttribute('src', newSrc);
+//         }
+//     };
+
+//     // Atualiza o SVG ao carregar a página
+//     updateSvgColor();
+
+//     // Alterna entre temas ao clicar no botão
+//     darkModeBtn.addEventListener('click', () => {
+//         root.classList.toggle('dark-mode');
+
+//         // Salva o estado do tema no localStorage
+//         const isDark = root.classList.contains('dark-mode');
+//         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+//         // Atualiza o ícone do botão
+//         darkModeBtn.textContent = isDark ? '🌙' : '☀️';
+
+//         // Atualiza a cor do SVG
+//         updateSvgColor();
+//     });
+// });
+
+
+
+// darkMode Slider
+
 document.addEventListener('DOMContentLoaded', () => {
-    const darkModeBtn = document.getElementById('darkModeBtn');
     const root = document.documentElement;
     const svgElement = document.getElementById('dynamic-svg');
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
     // Verifica o tema armazenado no localStorage
     const isDarkMode = localStorage.getItem('theme') === 'dark';
-
     if (isDarkMode) {
         root.classList.add('dark-mode');
+        toggleSwitch.checked = true;
     }
 
+    // Função para atualizar a cor do SVG dinamicamente
     const updateSvgColor = () => {
         const rootStyles = getComputedStyle(root);
         const svgColor = rootStyles.getPropertyValue('--svg-color').trim();
-
         const newSrc = `https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&size=50&duration=2000&pause=100&color=${svgColor}&background=FFFFFF00&width=480&height=100&lines=BIM.;Arquitetura.;Design.`;
 
         // Atualiza o atributo src apenas se houver mudanças para evitar redirecionamentos desnecessários
@@ -55,22 +103,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Atualiza o SVG ao carregar a página
     updateSvgColor();
 
-    // Alterna entre temas ao clicar no botão
-    darkModeBtn.addEventListener('click', () => {
-        root.classList.toggle('dark-mode');
+    // Alterna o tema quando o botão é acionado
+    toggleSwitch.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            root.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            root.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
 
-        // Salva o estado do tema no localStorage
-        const isDark = root.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-        // Atualiza o ícone do botão
-        darkModeBtn.textContent = isDark ? '🌙' : '☀️';
-
-        // Atualiza a cor do SVG
+        // Atualiza o SVG com base no tema selecionado
         updateSvgColor();
     });
 });
-
-
 
 

@@ -168,7 +168,7 @@ a {
 }
 
 /* dark Mode */
-.dark-mode-toggle {
+/* .dark-mode-toggle {
     margin-left: 1rem;
     display: flex;
     align-items: center;
@@ -185,7 +185,68 @@ a {
 
 .dark-mode-toggle button:hover {
     color: var(--color-destaque1);
+} */
+
+
+/* darkMode test slider */
+/*  */
+
+.switch {
+    margin-left: 1rem;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
 }
+    
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #2b2b2b;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 
 
 /* Menu */
@@ -302,14 +363,14 @@ a {
 /*************** INICIO *****/
 .inicio {
     width: 100%;
-    height: calc(100vh - 6rem); /* Subtrai a altura do header */
+    height: calc(100vh - 0rem); /* Subtrai a altura do header */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0rem 1rem;
     z-index: 1;
     user-select: none;
-    margin-top: 10rem; /* Altura do header */
+    padding-top: 10rem; /* Altura do header */
 }
 
 .container-inicio {
@@ -348,6 +409,21 @@ a {
 .destaque-inicio {
     font-weight: lighter;
 }
+
+.svg-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%; /* Ocupará todo o espaço horizontal */
+    max-width: 100%; /* Limita ao tamanho do viewport */
+}
+
+#dynamic-svg {
+    width: 100%; /* Ocupará 100% do container pai */
+    max-width: 480px; /* Limita o tamanho máximo ao original */
+    height: auto; /* Mantém a proporção */
+}
+
 
 .paragrafo-inicio p {
     font-size: clamp(1.2rem, 1.5vw + 1rem, 2rem);
@@ -660,7 +736,7 @@ a {
 }
 
 .box-skills {
-    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    border: 1px solid hsla(0, 0%, 34%, 0.448);
     border-radius: 20px;
     color: var(--color-white);
     display: flex;
@@ -764,7 +840,7 @@ a {
 }
 
 .card-servicos {
-    border: 1px solid hsla(0, 0%, 0%, 0.35);
+    border: 1px solid hsla(0, 0%, 34%, 0.448);
     max-width: 95%;
     min-height: 180px;
     border-radius: 150px;
@@ -776,7 +852,7 @@ a {
 
 .card-servicos-left {
     margin-left: 5%;
-    border: 1px solid hsla(0, 0%, 0%, 0.35);
+    border: 1px solid hsla(0, 0%, 34%, 0.448);
     width: 95%;
     min-height: 180px;
     border-radius: 150px;
@@ -789,6 +865,7 @@ a {
 
 .card-titulo {
     width: 68%;
+    color: var(--color-black);
     font-size: clamp(0.8rem, 2.5vw + .4rem, 2rem);
     font-family: var(--font-pequena);
     font-weight: normal;
@@ -798,7 +875,7 @@ a {
     width: 25%;
     max-width: 120px;
     height: 60px;
-    border: 1px solid hsla(0, 0%, 0%, 0.35);
+    border: 1px solid hsla(0, 0%, 34%, 0.448);
     border-radius: 100px;
     display: flex;
     flex-direction: column;
