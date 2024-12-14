@@ -368,22 +368,25 @@ input:checked + .slider:before {
 
 /*************** INICIO *****/
 .inicio {
-    width: 100%;
-    height: calc(100vh - 0rem); /* Subtrai a altura do header */
+    width: 100vw; /* Garante que a largura ocupe toda a viewport */
+    height: calc(100vh - 0rem); /* Altura total da viewport menos o header */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0rem 1rem;
+    padding: 0; /* Remove qualquer padding */
+    margin: 0; /* Remove margens externas */
     z-index: 1;
     user-select: none;
     padding-top: 10rem; /* Altura do header */
 
     background-image: url('/assets/img/img-teste4.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o espaço */
+    background-position: center; /* Centraliza a imagem no background */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
     transition: background-image 0.8s ease-in-out, background 0.8s ease-in-out;
-
+    box-sizing: border-box; /* Inclui padding no cálculo de largura e altura */
 }
+
 
 .inicio::before {
     content: '';
@@ -399,11 +402,11 @@ input:checked + .slider:before {
 }
 
 .dark-mode .inicio {
-    background-image: url('/assets/img/img-teste5.jpg'); /* Imagem para o dark mode */
+    background-image: url('/assets/img/img-teste6.jpg'); /* Imagem para o dark mode */
 }
 
 .dark-mode .inicio::before {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.4);
     ; /* Transparência para o dark mode */
 }
 
@@ -426,6 +429,7 @@ input:checked + .slider:before {
     text-align: left; /* Ajusta o texto para alinhar à esquerda */
     gap: 1rem; /* Adiciona espaçamento entre os elementos */
     position: relative; /* Permite o uso de propriedades top, right, bottom, left */
+    margin-left: 100px;
 }
 
 .botoes-inicio {
