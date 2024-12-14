@@ -92,7 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateSvgColor = () => {
         const rootStyles = getComputedStyle(root);
         const svgColor = rootStyles.getPropertyValue('--svg-color').trim();
-        const newSrc = `https://readme-typing-svg.herokuapp.com?font=Space+Grotesk&size=50&duration=2000&pause=100&color=${svgColor}&background=FFFFFF00&width=480&height=100&lines=BIM.;Arquitetura.;Design.`;
+
+        const newSrc = `https://readme-typing-svg.herokuapp.com/?font=Space+Grotesk&size=50&duration=3000&pause=100&color=${svgColor}&background=FFFFFF00&width=550&height=100&lines=Arquiteta+e+Urbanista`;
+
+        https://
 
         // Atualiza o atributo src apenas se houver mudanças para evitar redirecionamentos desnecessários
         if (svgElement.getAttribute('src') !== newSrc) {
