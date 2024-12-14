@@ -690,14 +690,26 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    
 }
 
 .imagem-sobre {
-    display: flex;
+    display:flex;
     justify-content: right;
     align-items: center;
-    position: absolute;
+    width: 90%;
 }
+
+.imagem-sobre img {
+    width: 100%; /* Ajuste o tamanho conforme necessário */
+    height: 100%; /* Deve ser igual à largura para formar o círculo */
+    border-radius: 50%; /* Torna a imagem circular */
+    object-fit: cover; /* Garante que a imagem seja cortada e ajustada ao círculo */
+    border: 2px solid #fff; /* Opcional: Adiciona uma borda ao círculo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: Adiciona um sombreamento */
+}
+
 
 .complemento-sobre {
     width: auto;
