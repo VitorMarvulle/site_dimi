@@ -379,7 +379,7 @@ input:checked + .slider:before {
     user-select: none;
     padding-top: 10rem; /* Altura do header */
 
-    background-image: url('/assets/img/img-teste4.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('/assets/img/img-teste6.png'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o espaço */
     background-position: center; /* Centraliza a imagem no background */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -395,7 +395,7 @@ input:checked + .slider:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Cor preta com transparência */
+    background: rgba(0, 0, 0, 0.6); /* Cor preta com transparência */
     z-index: -1; /* Coloca a sobreposição atrás do conteúdo */
     transition: background 0.8s ease-in-out;
 
