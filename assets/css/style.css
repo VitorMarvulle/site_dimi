@@ -379,7 +379,7 @@ input:checked + .slider:before {
     user-select: none;
     padding-top: 10rem; /* Altura do header */
 
-    background-image: url('/assets/img/img-teste6.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('https://vitormarvulle.github.io/site_dimi/assets/img/img-teste6.png'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem cobrir todo o espaço */
     background-position: center; /* Centraliza a imagem no background */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -402,7 +402,7 @@ input:checked + .slider:before {
 }
 
 .dark-mode .inicio {
-    background-image: url('/assets/img/img-teste6.jpg'); /* Imagem para o dark mode */
+    background-image: url('https://vitormarvulle.github.io/site_dimi/assets/img/img-teste6.jpg'); /* Imagem para o dark mode */
 }
 
 .dark-mode .inicio::before {
